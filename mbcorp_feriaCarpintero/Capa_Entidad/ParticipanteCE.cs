@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_Presentacion
+namespace Capa_Entidad
 {
-    public class Class1
+    public class ParticipanteCE
     {
+        public int MyProperty { get; set; }
+
     }
 }

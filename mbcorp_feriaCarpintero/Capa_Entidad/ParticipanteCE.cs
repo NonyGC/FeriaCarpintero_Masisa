@@ -26,18 +26,7 @@ namespace Capa_Entidad
         private string _opeMovil2;
         private string _correo;
         private string _proocu;
-        private string _procarre;
-        private string _nivestudio;
-        private string _instEducativa;
-        private string _nomInstitucion;
-        private string _ruc;
-        private string _empresa;
-        private string _cargo;
-        private string _telFijoEmp;
-        private string _telMovEmp;
-        private string _opeMovEmp;
-        private string _rubro;
-        private string _espRubro;
+        private string _proocuesp;
 
         public string codpart
         {
@@ -130,65 +119,10 @@ namespace Capa_Entidad
             get { return _apePat; }
             set { _apePat = value; }
         }
-        public string espRubro
+        public string proocuesp
         {
-            get { return _espRubro; }
-            set { _espRubro = value; }
-        }
-        public string rubro
-        {
-            get { return _rubro; }
-            set { _rubro = value; }
-        }
-        public string opeMovEmp
-        {
-            get { return _opeMovEmp; }
-            set { _opeMovEmp = value; }
-        }
-        public string telMovEmp
-        {
-            get { return _telMovEmp; }
-            set { _telMovEmp = value; }
-        }
-        public string telFijoEmp
-        {
-            get { return _telFijoEmp; }
-            set { _telFijoEmp = value; }
-        }
-        public string cargo
-        {
-            get { return _cargo; }
-            set { _cargo = value; }
-        }
-        public string empresa
-        {
-            get { return _empresa; }
-            set { _empresa = value; }
-        }
-        public string ruc
-        {
-            get { return _ruc; }
-            set { _ruc = value; }
-        }
-        public string nomInstitucion
-        {
-            get { return _nomInstitucion; }
-            set { _nomInstitucion = value; }
-        }
-        public string instEducativa
-        {
-            get { return _instEducativa; }
-            set { _instEducativa = value; }
-        }
-        public string nivestudio
-        {
-            get { return _nivestudio; }
-            set { _nivestudio = value; }
-        }
-        public string procarre
-        {
-            get { return _procarre; }
-            set { _procarre = value; }
+            get { return _proocuesp; }
+            set { _proocuesp = value; }
         }
         
 

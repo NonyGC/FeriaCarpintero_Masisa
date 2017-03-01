@@ -48,7 +48,6 @@
             this.grp = new System.Windows.Forms.GroupBox();
             this.txtProOcuEspeci = new Telerik.WinControls.UI.RadTextBox();
             this.txtApeMat = new Telerik.WinControls.UI.RadTextBox();
-            this.txtProfesionOcupacion = new Telerik.WinControls.UI.RadTextBox();
             this.Label16 = new System.Windows.Forms.Label();
             this.txtCodtelM2 = new System.Windows.Forms.TextBox();
             this.txtTelMovil2 = new System.Windows.Forms.MaskedTextBox();
@@ -90,10 +89,11 @@
             this.M = new System.Windows.Forms.RadioButton();
             this.btnLimpiar = new Telerik.WinControls.UI.RadButton();
             this.btnGuardar = new Telerik.WinControls.UI.RadButton();
+            this.cboProfesionOficion = new Telerik.WinControls.UI.RadDropDownList();
+            this.chbRedM = new Telerik.WinControls.UI.RadCheckBox();
             this.grp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtProOcuEspeci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApeMat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProfesionOcupacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboOperadorM2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboOperadorM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaN)).BeginInit();
@@ -109,13 +109,15 @@
             this.grpSexo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProfesionOficion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbRedM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(-3, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(-3, -2);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(893, 21);
             this.lblTitulo.TabIndex = 84;
@@ -125,9 +127,10 @@
             // grp
             // 
             this.grp.AccessibleDescription = "";
+            this.grp.Controls.Add(this.chbRedM);
+            this.grp.Controls.Add(this.cboProfesionOficion);
             this.grp.Controls.Add(this.txtProOcuEspeci);
             this.grp.Controls.Add(this.txtApeMat);
-            this.grp.Controls.Add(this.txtProfesionOcupacion);
             this.grp.Controls.Add(this.Label16);
             this.grp.Controls.Add(this.txtCodtelM2);
             this.grp.Controls.Add(this.txtTelMovil2);
@@ -167,12 +170,13 @@
             this.grp.Controls.Add(this.grpSexo);
             this.grp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grp.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp.Location = new System.Drawing.Point(22, 40);
+            this.grp.Location = new System.Drawing.Point(21, 31);
             this.grp.Name = "grp";
-            this.grp.Size = new System.Drawing.Size(844, 318);
+            this.grp.Size = new System.Drawing.Size(844, 308);
             this.grp.TabIndex = 83;
             this.grp.TabStop = false;
             this.grp.Text = "DATOS PERSONALES";
+            this.grp.Enter += new System.EventHandler(this.grp_Enter);
             // 
             // txtProOcuEspeci
             // 
@@ -203,20 +207,6 @@
             this.txtApeMat.Size = new System.Drawing.Size(268, 24);
             this.txtApeMat.TabIndex = 2;
             this.txtApeMat.ThemeName = "VisualStudio2012Light";
-            // 
-            // txtProfesionOcupacion
-            // 
-            this.txtProfesionOcupacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProfesionOcupacion.Location = new System.Drawing.Point(139, 272);
-            this.txtProfesionOcupacion.MinimumSize = new System.Drawing.Size(0, 24);
-            this.txtProfesionOcupacion.Name = "txtProfesionOcupacion";
-            // 
-            // 
-            // 
-            this.txtProfesionOcupacion.RootElement.MinSize = new System.Drawing.Size(0, 24);
-            this.txtProfesionOcupacion.Size = new System.Drawing.Size(246, 24);
-            this.txtProfesionOcupacion.TabIndex = 23;
-            this.txtProfesionOcupacion.ThemeName = "VisualStudio2012Light";
             // 
             // Label16
             // 
@@ -700,9 +690,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(709, 381);
+            this.btnLimpiar.Location = new System.Drawing.Point(708, 344);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(159, 33);
+            this.btnLimpiar.Size = new System.Drawing.Size(157, 27);
             this.btnLimpiar.TabIndex = 86;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.ThemeName = "VisualStudio2012Light";
@@ -710,19 +700,36 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(544, 381);
+            this.btnGuardar.Location = new System.Drawing.Point(543, 344);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(159, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(157, 27);
             this.btnGuardar.TabIndex = 85;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.ThemeName = "VisualStudio2012Light";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // cboProfesionOficion
+            // 
+            this.cboProfesionOficion.Location = new System.Drawing.Point(140, 273);
+            this.cboProfesionOficion.Name = "cboProfesionOficion";
+            this.cboProfesionOficion.Size = new System.Drawing.Size(255, 24);
+            this.cboProfesionOficion.TabIndex = 141;
+            this.cboProfesionOficion.ThemeName = "VisualStudio2012Light";
+            // 
+            // chbRedM
+            // 
+            this.chbRedM.Location = new System.Drawing.Point(678, 275);
+            this.chbRedM.Name = "chbRedM";
+            this.chbRedM.Size = new System.Drawing.Size(57, 18);
+            this.chbRedM.TabIndex = 142;
+            this.chbRedM.Text = "RED M";
+            this.chbRedM.ThemeName = "VisualStudio2012Light";
+            // 
             // FrmParticipante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 430);
+            this.ClientSize = new System.Drawing.Size(885, 387);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblTitulo);
@@ -740,7 +747,6 @@
             this.grp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtProOcuEspeci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApeMat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProfesionOcupacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboOperadorM2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboOperadorM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaN)).EndInit();
@@ -757,6 +763,8 @@
             this.grpSexo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProfesionOficion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbRedM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -768,7 +776,6 @@
         internal System.Windows.Forms.Label lblTitulo;
         internal System.Windows.Forms.GroupBox grp;
         internal Telerik.WinControls.UI.RadTextBox txtApeMat;
-        internal Telerik.WinControls.UI.RadTextBox txtProfesionOcupacion;
         internal System.Windows.Forms.Label Label16;
         internal System.Windows.Forms.TextBox txtCodtelM2;
         internal System.Windows.Forms.MaskedTextBox txtTelMovil2;
@@ -811,5 +818,7 @@
         internal Telerik.WinControls.UI.RadButton btnLimpiar;
         internal Telerik.WinControls.UI.RadButton btnGuardar;
         internal Telerik.WinControls.UI.RadTextBox txtProOcuEspeci;
+        private Telerik.WinControls.UI.RadDropDownList cboProfesionOficion;
+        private Telerik.WinControls.UI.RadCheckBox chbRedM;
     }
 }

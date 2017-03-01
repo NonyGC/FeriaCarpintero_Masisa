@@ -108,8 +108,9 @@ namespace Capa_Presentacion
                 _.telMovil2 = txtCodtelM2.Text + txtTelMovil2.Text;
                 _.opeMovil2 = cboOperadorM2.Text;
                 _.correo = txtCorreo.Text;
-                _.profeOcupa = txtProfesionOcupacion.Text;
+                _.profeOcupa = cboProfesionOficion.SelectedText;
                 _.proocuesp = txtProOcuEspeci.Text;
+                _.redm = (chbRedM.Checked) ? "SI" : "NO";
             }
             partEst = partCN.participanteInsertCN(partCE) ? true : false;
             if (partEst)
@@ -126,10 +127,10 @@ namespace Capa_Presentacion
         {
             ubigeoPredeterminado();
             RadioButtonclear(grpSexo);
-            txtCodtel1.Text = "(___)";
-            txtCodtelM1.Text = "(___)";
-            txtCodtel2.Text = "(___)";
-            txtCodtelM2.Text = "(___)";
+            txtCodtel1.Text = "(001)";
+            txtCodtelM1.Text = "(001)";
+            txtCodtel2.Text = "(001)";
+            txtCodtelM2.Text = "(001)";
             txtTelFijo.Clear();
             txtTelFijo2.Clear();
             txtTelMovil.Clear();
@@ -143,7 +144,7 @@ namespace Capa_Presentacion
             cboEstadoCivil.SelectedIndex = -1;
             txtDNICE.Clear();
             txtCorreo.Clear();
-            txtProfesionOcupacion.Clear();
+            cboProfesionOficion.SelectedIndex = -1;
             txtFechaN.Clear();
             txtProOcuEspeci.Clear();
         }
@@ -211,6 +212,11 @@ namespace Capa_Presentacion
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void grp_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

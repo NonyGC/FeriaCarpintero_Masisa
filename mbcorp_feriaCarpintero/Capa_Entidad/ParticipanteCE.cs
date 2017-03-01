@@ -124,7 +124,7 @@ namespace Capa_Entidad
             get { return _proocuesp; }
             set { _proocuesp = value; }
         }
-        
 
+        public string redm { get; set; }
     }
 }

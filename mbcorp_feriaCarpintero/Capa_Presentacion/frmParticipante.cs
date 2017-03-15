@@ -15,6 +15,7 @@ namespace Capa_Presentacion
         public FrmParticipante()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
 
         ParticipanteCE partCE = new ParticipanteCE();

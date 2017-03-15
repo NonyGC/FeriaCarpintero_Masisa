@@ -18,9 +18,9 @@ namespace Capa_Datos
             try
             {
                 int i=0;
-                SqlCommand cmd = CommandProcedure("uspParticipanteInsert");
+                SqlCommand cmd = CommandProcedure("uspParticipanteCiteInsert");
                 var _ = part;
-                string[] env = { _.codpart, _.apePat, _.apeMat, _.nombres, _.sexo, _.fechaNaci, _.dnice, _.direccion, _.ubigeo, _.telFijo, _.telMovil, _.opeMovil, _.telFijo2, _.telMovil2, _.opeMovil2, _.correo, _.profeOcupa, _.proocuesp };
+                string[] env = { _.codpart, _.apePat, _.apeMat, _.nombres, _.sexo, _.fechaNaci, _.dnice, _.direccion, _.ubigeo, _.telFijo, _.telMovil, _.opeMovil, _.telFijo2, _.telMovil2, _.opeMovil2, _.correo, _.profeOcupa, _.proocuesp,_.redm };
                 cmd = Parameters(cmd,env);
                 i =cmd.ExecuteNonQuery();
                 return i > 0 ? true : false;

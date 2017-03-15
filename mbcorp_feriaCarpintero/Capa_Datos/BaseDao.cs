@@ -12,24 +12,24 @@ using System.Diagnostics;
 
 namespace Capa_Datos
 {
+
     public class BaseDao
     {
         protected SqlConnection conexion()
         {
             SqlConnection conexionValue = new SqlConnection();
-
-            if (conexionValue.State == ConnectionState.Open)
-            {
-                conexionValue.Close();
-            }
-            conexionValue.ConnectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-
             try
             {
+                if (conexionValue.State == ConnectionState.Open)
+                {
+                    conexionValue.Close();
+                }
+                conexionValue.ConnectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
                 conexionValue.Open();
             }
             catch (Exception ex)
             {
+                RadMessageBox.SetThemeName("VisualStudio2012Light");
                 RadMessageBox.Show(ex.Message, "", MessageBoxButtons.OK, RadMessageIcon.Info);
             }
             return conexionValue;

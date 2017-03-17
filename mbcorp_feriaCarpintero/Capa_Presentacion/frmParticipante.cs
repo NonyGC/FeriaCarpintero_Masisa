@@ -99,7 +99,7 @@ namespace Capa_Presentacion
                 _.fechaNaci = fechaN;
                 _.EstadoCiv = cboEstadoCivil.Text;
                 _.dnice = txtDNICE.Text.Trim();
-                _.sexo = (GetGrpBxCheckedBbt(grpSexo) != null) ? GetGrpBxCheckedBbt(grpSexo).Text : string.Empty;
+                _.sexo = cboSexo.Text;
                 _.direccion = txtDireccion.Text;
                 _.ubigeo = codUbi;
                 _.telFijo = txtCodtel1.Text + txtTelFijo.Text;
@@ -127,7 +127,7 @@ namespace Capa_Presentacion
         void limpiar()
         {
             ubigeoPredeterminado();
-            RadioButtonclear(grpSexo);
+            cboSexo.SelectedIndex=-1;
             txtCodtel1.Text = "(001)";
             txtCodtelM1.Text = "(001)";
             txtCodtel2.Text = "(001)";

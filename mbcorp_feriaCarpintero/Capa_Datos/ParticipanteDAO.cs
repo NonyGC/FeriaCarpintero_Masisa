@@ -1,28 +1,23 @@
 ﻿using Capa_Entidad;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Capa_Datos
 {
-   public class ParticipanteDAO : BaseDao
+    public class ParticipanteDAO : BaseDao
     {
-
         public bool participanteInsert(ParticipanteCE part)
         {
             try
             {
-                int i=0;
+                int i = 0;
                 SqlCommand cmd = CommandProcedure("uspParticipanteCiteInsert");
                 var _ = part;
-                string[] env = { _.codpart, _.apePat, _.apeMat, _.nombres, _.sexo, _.fechaNaci, _.dnice, _.direccion, _.ubigeo, _.telFijo, _.telMovil, _.opeMovil, _.telFijo2, _.telMovil2, _.opeMovil2, _.correo, _.profeOcupa, _.proocuesp,_.redm };
-                cmd = Parameters(cmd,env);
-                i =cmd.ExecuteNonQuery();
+                string[] env = { _.codpart, _.apePat, _.apeMat, _.nombres, _.sexo, _.fechaNaci, _.dnice, _.direccion, _.ubigeo, _.telFijo, _.telMovil, _.opeMovil, _.telFijo2, _.telMovil2, _.opeMovil2, _.correo, _.profeOcupa, _.proocuesp, _.redm };
+                cmd = Parameters(cmd, env);
+                i = cmd.ExecuteNonQuery();
                 return i > 0 ? true : false;
             }
             catch (Exception ex)
@@ -52,6 +47,7 @@ namespace Capa_Datos
             dtProvincia = GetDataTable(cmd);
             return dtProvincia;
         }
+
         public DataTable distritoGet(string idDep, string idProv)
         {
             DataTable dtDistrito = new DataTable();
@@ -60,8 +56,6 @@ namespace Capa_Datos
             cmd.Parameters.AddWithValue("@idPro", idProv);
             dtDistrito = GetDataTable(cmd);
             return dtDistrito;
-        } 
-
+        }
     }
-
 }

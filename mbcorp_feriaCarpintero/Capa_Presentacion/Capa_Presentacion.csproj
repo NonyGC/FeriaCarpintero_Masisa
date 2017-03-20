@@ -72,10 +72,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvento.Designer.cs">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +103,13 @@
       <DependentUpon>FrmParticipante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvento.resx">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa_Entidad\Capa_Entidad.csproj">
@@ -102,6 +120,12 @@
       <Project>{5345885a-bcde-4910-815f-0744af994be7}</Project>
       <Name>Capa_Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a63be078ddc2d90edd84e76906cc7e5b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\df4d238d830ea53ca6eb0f632ffb81d5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

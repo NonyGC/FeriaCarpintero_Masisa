@@ -1,24 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using Telerik.WinControls;
-
-namespace Capa_Presentacion
+﻿namespace Capa_Presentacion
 {
     public partial class FrmEvento : Telerik.WinControls.UI.RadForm
     {
+        private string codEvento;
+
         public FrmEvento()
         {
             InitializeComponent();
         }
 
-        private void FrmEvento_Load(object sender, EventArgs e)
+        public FrmEvento(string codEvento)
+        {
+            this.codEvento = codEvento;
+            InitializeComponent();
+        }
+
+        public string getDescripcion
+        {
+            get
+            {
+                return txtDescripcion.Text;
+            }
+        }
+
+        public string getCodigo
+        {
+            get {
+                return txtCodigo.Text;
+            }
+        }
+
+        private void radButton1_Click(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void FrmEvento_Load(object sender, System.EventArgs e)
+        {
+            txtCodigo.Text = codEvento;
         }
     }
 }

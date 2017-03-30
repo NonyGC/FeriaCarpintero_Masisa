@@ -186,6 +186,8 @@ namespace Capa_Presentacion
                 _.profeOcupa = cboProfesionOficion.Text;
                 _.proocuesp = txtProOcuEspeci.Text;
                 _.redm = (chbRedM.Checked) ? "SI" : "NO";
+                _.redminteresado= (chbRedMInteresado.Checked) ? "SI" : "NO";
+                _.comoseEntero = (GetGrpBxCheckedBbt(groupBox1) != null) ? GetGrpBxCheckedBbt(groupBox1).Text : string.Empty;
             }
             partEst = false;
             string accionBtn = string.Empty;
@@ -203,10 +205,10 @@ namespace Capa_Presentacion
                 string strMensaje = string.Format("SE {0} CORRECTAMENTE {1}PARTICIPANTE : {2}", accionBtn, Environment.NewLine, codigo);
                 RadMessageBox.Show(strMensaje, "MBCORP", MessageBoxButtons.OK, RadMessageIcon.Info);
                 limpiar();
-            }
-            else
-            {
-                RadMessageBox.Show("OCURRIO UN ERROR,VUELVA A INTENTAR", "MBCORP", MessageBoxButtons.OK, RadMessageIcon.Error);
+            //}
+            //else
+            //{
+            //    RadMessageBox.Show("OCURRIO UN ERROR,VUELVA A INTENTAR", "MBCORP", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -239,6 +241,7 @@ namespace Capa_Presentacion
             cboParticipanteSearch.ValueMember = "codigo";
             cboParticipanteSearch.DisplayMember = "participante";
             cboParticipanteSearch.SelectedIndex = -1;
+            limpiar();
         }
 
         private void cboParticipanteSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -314,6 +317,19 @@ namespace Capa_Presentacion
                 cboProfesionOficion.SelectedValue = _.Rows[0]["profe_ocupa"].ToString();
                 txtProOcuEspeci.Text = _.Rows[0]["profocu_esp"].ToString();
                 chbRedM.Checked = (_.Rows[0]["redm"].ToString() == "SI") ? true : false;
+                chbRedMInteresado.Checked = (_.Rows[0]["redMInteresado"].ToString() == "SI") ? true : false;
+
+                foreach (Control element in groupBox1.Controls)
+                {
+                    if (element is RadioButton)
+                    {
+                        if (((RadioButton)element).Text== _.Rows[0]["comoseEntero"].ToString())
+                        {
+                            ((RadioButton)element).Checked = true;
+                        }
+                    }
+                }
+
                 btnGuardar.Text = "ACTUALIZAR";
             }
         }
@@ -368,6 +384,9 @@ namespace Capa_Presentacion
         {
             ubigeoPredeterminado();
             cboSexo.SelectedIndex = -1;
+            chbRedM.Checked = false;
+            chbRedMInteresado.Checked = false;
+            RadioButtonclear(groupBox1);
             txtCodtel1.Text = "(001)";
             txtCodtelM1.Text = "(001)";
             txtCodtel2.Text = "(001)";
@@ -456,37 +475,20 @@ namespace Capa_Presentacion
             cboDistrito.SelectedIndex = -1;
         }
 
-        public class CustomAutoCompleteSuggestHelper : AutoCompleteSuggestHelper
-        {
-            public CustomAutoCompleteSuggestHelper(RadDropDownListElement owner) : base(owner)
-            {
-            }
 
-            public override void ApplyFilterToDropDown(string filter)
-            {
-                base.ApplyFilterToDropDown(filter);
-                this.DropDownList.ListElement.DataLayer.DataView.Comparer = new CustomComparer();
-            }
-        }
-    }
-    public class CustomAutoCompleteSuggestHelper : AutoCompleteSuggestHelper
-    {
-        public CustomAutoCompleteSuggestHelper(RadDropDownListElement owner) : base(owner)
+        private void grp_Enter(object sender, EventArgs e)
         {
+
         }
 
-        public override void ApplyFilterToDropDown(string filter)
+        private void radRadioButton1_ToggleStateChanged(object sender, StateChangedEventArgs args)
         {
-            base.ApplyFilterToDropDown(filter);
-            DropDownList.ListElement.DataLayer.DataView.Comparer = new CustomComparer();
-        }
-    }
 
-    public class CustomComparer : IComparer<RadListDataItem>
-    {
-        public int Compare(RadListDataItem x, RadListDataItem y)
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            return x.Text.Length.CompareTo(y.Text.Length);
+
         }
     }
 

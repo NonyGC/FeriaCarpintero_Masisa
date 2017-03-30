@@ -33,6 +33,9 @@
   <PropertyGroup>
     <StartupObject>Capa_Presentacion.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\nexus2cee_android-m.png.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,11 +67,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CustomAutoCompleteSuggestHelper.cs" />
+    <Compile Include="Class\CustomComparer.cs" />
+    <Compile Include="FrmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvento.Designer.cs">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListado.Designer.cs">
+      <DependentUpon>FrmListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmParticipante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmParticipante.Designer.cs">
       <DependentUpon>FrmParticipante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEventoParticipante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEventoParticipante.designer.cs">
+      <DependentUpon>FrmEventoParticipante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuMDI.Designer.cs">
+      <DependentUpon>MenuMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,12 +123,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="FrmEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEvento.Designer.cs">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -99,16 +134,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmEvento.resx">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListado.resx">
+      <DependentUpon>FrmListado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmParticipante.resx">
       <DependentUpon>FrmParticipante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEventoParticipante.resx">
+      <DependentUpon>FrmEventoParticipante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuMDI.resx">
+      <DependentUpon>MenuMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmEvento.resx">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB.sql" />
+    <Content Include="Resources\nexus2cee_android-m.png.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

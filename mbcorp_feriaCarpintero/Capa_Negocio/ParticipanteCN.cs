@@ -32,6 +32,11 @@ namespace Capa_Negocio
             return partDAO.participanteCodAutogenerado();
         }
 
+        public DataTable getTableEventoParticipante(string codEvento)
+        {
+            return partDAO.getTableEventoParticipante(codEvento);
+        }
+
         public DataTable ParticipanteGetRow(string codpart)
         {
             return partDAO.ParticipanteGetRow(codpart);
@@ -41,6 +46,12 @@ namespace Capa_Negocio
         {
             return partDAO.participanteInsert(partCE);
         }
+
+        public bool eventoInsertCN(string codigo, string descripcion)
+        {
+            return partDAO.eventoInsert(codigo, descripcion);
+        }
+
         public bool participanteUpdateCN(ParticipanteCE partCE)
         {
             return partDAO.participanteUpdateCN(partCE);
@@ -49,6 +60,21 @@ namespace Capa_Negocio
         public DataTable provinciaGet(string idDep)
         {
             return partDAO.provinciaGet(idDep);
+        }
+
+        public object eventoParticipante_getEventotbl()
+        {
+            return partDAO.eventoParticipante_getEventotbl();
+        }
+
+        public string eventoCodAutogenerado()
+        {
+            return partDAO.eventoCodAutogenerado(); 
+        }
+
+        public bool eventoParticipanteInsertCN(string codEvento, string codigo)
+        {
+            return partDAO.eventoParticipanteInsertCN(codEvento, codigo); 
         }
     }
 }

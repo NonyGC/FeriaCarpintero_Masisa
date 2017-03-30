@@ -126,5 +126,7 @@ namespace Capa_Entidad
         }
 
         public string redm { get; set; }
+        public string redminteresado { get; set; }
+        public string comoseEntero { get; set; }
     }
 }

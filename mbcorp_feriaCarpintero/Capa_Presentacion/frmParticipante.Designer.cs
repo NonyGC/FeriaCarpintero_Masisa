@@ -60,8 +60,11 @@
             this.object_e0b2b5bd_c9b4_404e_b0e1_2fde7e30987a = new Telerik.WinControls.UI.RadLabelRootElement();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.grp = new System.Windows.Forms.GroupBox();
+            this.chbRedMInteresado = new Telerik.WinControls.UI.RadCheckBox();
             this.cboSexo = new Telerik.WinControls.UI.RadDropDownList();
+            this.btnLimpiar = new Telerik.WinControls.UI.RadButton();
             this.Label26 = new System.Windows.Forms.Label();
+            this.btnGuardar = new Telerik.WinControls.UI.RadButton();
             this.chbRedM = new Telerik.WinControls.UI.RadCheckBox();
             this.cboProfesionOficion = new Telerik.WinControls.UI.RadDropDownList();
             this.txtProOcuEspeci = new Telerik.WinControls.UI.RadTextBox();
@@ -104,13 +107,17 @@
             this.Label7 = new System.Windows.Forms.Label();
             this.cboParticipanteSearch = new Telerik.WinControls.UI.RadDropDownList();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnLimpiar = new Telerik.WinControls.UI.RadButton();
-            this.btnGuardar = new Telerik.WinControls.UI.RadButton();
             this.object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2 = new Telerik.WinControls.RootRadElement();
-            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtFACEBOOK = new System.Windows.Forms.RadioButton();
+            this.rbtMENSAJE = new System.Windows.Forms.RadioButton();
+            this.rbtAVISO_PUBLICITARIO = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.grp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chbRedMInteresado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSexo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbRedM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProfesionOficion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProOcuEspeci)).BeginInit();
@@ -128,9 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNombres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApePat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboParticipanteSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,7 +164,8 @@
             // grp
             // 
             this.grp.AccessibleDescription = "";
-            this.grp.Controls.Add(this.radCheckBox1);
+            this.grp.Controls.Add(this.groupBox1);
+            this.grp.Controls.Add(this.chbRedMInteresado);
             this.grp.Controls.Add(this.cboSexo);
             this.grp.Controls.Add(this.btnLimpiar);
             this.grp.Controls.Add(this.Label26);
@@ -208,9 +214,20 @@
             this.grp.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp.Location = new System.Drawing.Point(18, 91);
             this.grp.Name = "grp";
-            this.grp.Size = new System.Drawing.Size(844, 333);
+            this.grp.Size = new System.Drawing.Size(844, 383);
             this.grp.TabIndex = 3;
             this.grp.TabStop = false;
+            this.grp.Enter += new System.EventHandler(this.grp_Enter);
+            // 
+            // chbRedMInteresado
+            // 
+            this.chbRedMInteresado.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbRedMInteresado.Location = new System.Drawing.Point(230, 299);
+            this.chbRedMInteresado.Name = "chbRedMInteresado";
+            this.chbRedMInteresado.Size = new System.Drawing.Size(125, 18);
+            this.chbRedMInteresado.TabIndex = 24;
+            this.chbRedMInteresado.Text = "INTERESADO RED M";
+            this.chbRedMInteresado.ThemeName = "VisualStudio2012Light";
             // 
             // cboSexo
             // 
@@ -226,6 +243,16 @@
             this.cboSexo.TabIndex = 9;
             this.cboSexo.ThemeName = "VisualStudio2012Light";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(681, 344);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(138, 27);
+            this.btnLimpiar.TabIndex = 25;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.ThemeName = "VisualStudio2012Light";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // Label26
             // 
             this.Label26.AutoSize = true;
@@ -235,6 +262,16 @@
             this.Label26.Size = new System.Drawing.Size(34, 13);
             this.Label26.TabIndex = 144;
             this.Label26.Text = "SEXO";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(537, 344);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(138, 27);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.ThemeName = "VisualStudio2012Light";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // chbRedM
             // 
@@ -776,47 +813,61 @@
             this.label15.TabIndex = 106;
             this.label15.Text = "PARTICIPANTE";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(701, 295);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(138, 27);
-            this.btnLimpiar.TabIndex = 25;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.ThemeName = "VisualStudio2012Light";
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(557, 295);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(138, 27);
-            this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.ThemeName = "VisualStudio2012Light";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2
             // 
             this.object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2.Name = "object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2";
             this.object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2.StretchHorizontally = true;
             this.object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2.StretchVertically = true;
             // 
-            // radCheckBox1
+            // groupBox1
             // 
-            this.radCheckBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCheckBox1.Location = new System.Drawing.Point(230, 299);
-            this.radCheckBox1.Name = "radCheckBox1";
-            this.radCheckBox1.Size = new System.Drawing.Size(125, 18);
-            this.radCheckBox1.TabIndex = 24;
-            this.radCheckBox1.Text = "INTERESADO RED M";
-            this.radCheckBox1.ThemeName = "VisualStudio2012Light";
+            this.groupBox1.Controls.Add(this.rbtAVISO_PUBLICITARIO);
+            this.groupBox1.Controls.Add(this.rbtMENSAJE);
+            this.groupBox1.Controls.Add(this.rbtFACEBOOK);
+            this.groupBox1.Location = new System.Drawing.Point(140, 323);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(340, 48);
+            this.groupBox1.TabIndex = 148;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "COMO SE ENTERO DEL EVENTO";
+            // 
+            // rbtFACEBOOK
+            // 
+            this.rbtFACEBOOK.AutoSize = true;
+            this.rbtFACEBOOK.Location = new System.Drawing.Point(23, 21);
+            this.rbtFACEBOOK.Name = "rbtFACEBOOK";
+            this.rbtFACEBOOK.Size = new System.Drawing.Size(81, 17);
+            this.rbtFACEBOOK.TabIndex = 0;
+            this.rbtFACEBOOK.Text = "FACEBOOK";
+            this.rbtFACEBOOK.UseVisualStyleBackColor = true;
+            // 
+            // rbtMENSAJE
+            // 
+            this.rbtMENSAJE.AutoSize = true;
+            this.rbtMENSAJE.Location = new System.Drawing.Point(122, 21);
+            this.rbtMENSAJE.Name = "rbtMENSAJE";
+            this.rbtMENSAJE.Size = new System.Drawing.Size(72, 17);
+            this.rbtMENSAJE.TabIndex = 0;
+            this.rbtMENSAJE.Text = "MENSAJE";
+            this.rbtMENSAJE.UseVisualStyleBackColor = true;
+            this.rbtMENSAJE.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // rbtAVISO_PUBLICITARIO
+            // 
+            this.rbtAVISO_PUBLICITARIO.AutoSize = true;
+            this.rbtAVISO_PUBLICITARIO.Location = new System.Drawing.Point(200, 21);
+            this.rbtAVISO_PUBLICITARIO.Name = "rbtAVISO_PUBLICITARIO";
+            this.rbtAVISO_PUBLICITARIO.Size = new System.Drawing.Size(129, 17);
+            this.rbtAVISO_PUBLICITARIO.TabIndex = 0;
+            this.rbtAVISO_PUBLICITARIO.Text = "AVISO PUBLICITARIO";
+            this.rbtAVISO_PUBLICITARIO.UseVisualStyleBackColor = true;
+            this.rbtAVISO_PUBLICITARIO.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // FrmParticipante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 434);
+            this.ClientSize = new System.Drawing.Size(879, 484);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cboParticipanteSearch);
             this.Controls.Add(this.grp);
@@ -836,7 +887,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.grp.ResumeLayout(false);
             this.grp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chbRedMInteresado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSexo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbRedM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProfesionOficion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProOcuEspeci)).EndInit();
@@ -854,9 +908,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNombres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApePat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboParticipanteSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -917,6 +970,10 @@
         internal Telerik.WinControls.UI.RadDropDownList cboParticipanteSearch;
         internal System.Windows.Forms.Label label15;
         private Telerik.WinControls.RootRadElement object_a2d84a50_d976_4ca1_a47b_dda1ae8dabb2;
-        private Telerik.WinControls.UI.RadCheckBox radCheckBox1;
+        private Telerik.WinControls.UI.RadCheckBox chbRedMInteresado;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbtMENSAJE;
+        private System.Windows.Forms.RadioButton rbtFACEBOOK;
+        private System.Windows.Forms.RadioButton rbtAVISO_PUBLICITARIO;
     }
 }
